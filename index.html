@@ -29,7 +29,7 @@
 
   <script>
     function sendLog() {
-      fetch("http://127.0.0.1:4040/log", {
+      fetch("/log", {
         method: "POST"
       }).then(() => {
         document.getElementById("status").textContent = "Дякуємо за небайдужість!";
