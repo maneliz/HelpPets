@@ -1,6 +1,7 @@
 from flask import Flask, request, make_response
 from datetime import datetime
 from flask_cors import CORS
+import os
 
 app = Flask(__name__)
 CORS(app)
@@ -28,3 +29,9 @@ def log_click():
     response = make_response("OK", 200)
     response.headers["Access-Control-Allow-Origin"] = "*"
     return response
+
+if __name__ == '__main__':
+    import os
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=False)
+    
